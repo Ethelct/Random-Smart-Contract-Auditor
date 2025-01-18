@@ -4,7 +4,7 @@ from web3 import Web3
 from web3.exceptions import TransactionNotFound
 
 # Replace with your own Ethereum node URL
-ETH_NODE_URL = 'https://eth-mainnet.g.alchemy.com/v2/D5LdLyasRfGaEnZF4GXjEWjHLPOnvQ1_'
+ETH_NODE_URL = 'https://eth-mainnet.g.alchemy.com/v2/<your-api-key>'
 web3 = Web3(Web3.HTTPProvider(ETH_NODE_URL))
 
 def is_contract(address):
@@ -38,7 +38,7 @@ def create_new_filename(base_name="generated", extension=".txt"):
         i += 1
 
 def main():
-    seen_contracts = load_existing_contracts('contracts.txt')  # Load existing contracts
+    seen_contracts = load_existing_contracts('../contracts/contracts.txt')  # Load existing contracts
     filename = create_new_filename()  # Create a new unique filename
 
     while True:
